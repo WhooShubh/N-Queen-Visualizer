@@ -40,3 +40,4 @@ The project uses the Backtracking Algorithm:
 3. If safe, recursively place the next queen.
 4. If no valid position exists, backtrack.
 5. Continue until all queens are placed.
+
