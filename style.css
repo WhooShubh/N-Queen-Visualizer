@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, rgba(1, 10, 30, 0.92) 0%, rgba(5, 20, 50, 0.88) 100%),
+    url(chess123.avif);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.header-content h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(100, 200, 255, 0.4);
+}
+
+.header-content h1 span {
+  background: linear-gradient(90deg, #f72585, #7209b7, #4cc9f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-icon {
+  font-size: 1.8rem;
+  color: #f72585;
+  filter: drop-shadow(0 0 8px #f72585);
+}
+
+.header-sub {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.5px;
+}
+
+/* ── Control Panel ── */
+.control-panel {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.control-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Input Box ── */
+.inputbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgba(78, 205, 196, 0.5);
+  padding-bottom: 6px;
+  transition: border-color 0.3s;
+}
+
+.inputbox:focus-within {
+  border-bottom-color: #4ecdc4;
+}
+
+.input-icon {
+  color: #4ecdc4;
+  font-size: 1.1rem;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.numberbox {
+  flex: 1;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  padding: 4px 4px 4px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.numberbox::-webkit-inner-spin-button,
+.numberbox::-webkit-outer-spin-button {
+  opacity: 0.4;
+}
+
+.inputbox label {
+  position: absolute;
+  left: 30px;
+  top: 4px;
+  color: rgba(78, 205, 196, 0.7);
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label,
+.inputbox input:disabled ~ label {
+  top: -18px;
+  left: 0;
+  font-size: 0.72rem;
+  color: #4ecdc4;
+  letter-spacing: 0.5px;
+}
+
+/* ── Speed Section ── */
+.speed-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.speed-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.speed-label i {
+  margin-right: 6px;
+  color: #fa7921;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.speed-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fa7921;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.15);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #fa7921, #f72585);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(247, 37, 133, 0.6);
+  transition: box-shadow 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 4px rgba(247, 37, 133, 0.25), 0 0 12px rgba(247, 37, 133, 0.6);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #fa7921, #f72585);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 8px rgba(247, 37, 133, 0.6);
+}
+
+#progress-bar {
+  display: none;
+}
+
+/* ── Play Button ── */
+.play-button {
+  align-self: center;
+  border: none;
+  outline: none;
+  padding: 0.75rem 2.5rem;
+  background: linear-gradient(135deg, #f72585, #7209b7);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 20px rgba(247, 37, 133, 0.45);
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 30px rgba(247, 37, 133, 0.6);
+}
+
+.play-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.play-button i {
+  margin-right: 6px;
+}
+
+/* ── Queen Arrangement Info ── */
+.queen-arrangement {
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.queen-info {
+  display: inline-block;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.3px;
+}
+
+/* ── Board Grid ── */
+#n-queen-board {
+  display: flex;
+  width: 90%;
+  margin: 1.5rem auto 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#n-queen-board div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 10px 10px 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#n-queen-board div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+}
+
+h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #7209b7, #4cc9f0);
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  font-size: 1rem;
+  transition: background-color 0.25s ease;
+}
