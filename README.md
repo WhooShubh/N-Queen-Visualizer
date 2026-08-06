@@ -1,5 +1,7 @@
 # N-Queen Visualizer
 
+![Project Screenshot](images/Screenshot.png)
+
 ## Overview
 This project is a web-based visualization of the N-Queen Problem using the Backtracking Algorithm. It demonstrates how recursive backtracking places queens on an N×N chessboard while ensuring that no two queens attack each other.
 
